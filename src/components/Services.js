@@ -11,6 +11,10 @@ function Services() {
             without the complexity. Our wireless accessibility is tailor-made
             for modern people with modern tools.
           </p>
+          <img
+            src={`${process.env.PUBLIC_URL}/images/social-media-amico-962copy.png`}
+            alt="devices"
+          />
         </div>
         <div className="flex flex-col gap-8 md:w-1/2">
           <div className="flex flex-col gap-2">
@@ -19,7 +23,7 @@ function Services() {
                 <div className="px-4 py-2 text-white rounded-full bg-red-500">
                   01
                 </div>
-                <p className="text-base font-medium text-lime-900">
+                <p className="text-base font-medium text-gray-900">
                   Track company-wide progress
                 </p>
               </div>
@@ -36,7 +40,7 @@ function Services() {
                 <div className="px-4 py-2 text-white rounded-full bg-red-500">
                   01
                 </div>
-                <p className="text-base font-medium text-lime-900">
+                <p className="text-base font-medium text-gray-900">
                   Track company-wide progress
                 </p>
               </div>
@@ -53,7 +57,7 @@ function Services() {
                 <div className="px-4 py-2 text-white rounded-full bg-red-500">
                   01
                 </div>
-                <p className="text-base font-medium text-lime-900">
+                <p className="text-base font-medium text-gray-900">
                   Track company-wide progress
                 </p>
               </div>
