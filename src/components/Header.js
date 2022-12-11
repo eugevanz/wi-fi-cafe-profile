@@ -4,16 +4,16 @@ function Header() {
       <div className="flex flex-col-reverse md:flex-row container items-center px-10 mx-auto m-24">
         <div className="flex flex-col gap-8 md:w-1/2 lg:w-1/3">
           <p className="max-w-sm text-4xl font-bold text-center md:text-5xl md:text-left">
-            Bring everyone together to build better products
+            First-rate and superior wireless solutions for everyone
           </p>
           <p className="max-w-sm text-center text-gray-500 md:text-left">
-            WiFi Cafe makes it simpler for everyone on every device to plan
-            their day-to-day while keeping the larger life goals in view.
+            We provide a high-quality service that is affordable and flexible,
+            seamless, and a reliable wireless experience for venue visitors.
           </p>
           <div className="flex justify-center md:justify-start">
             <a
               href="#toggle"
-              className="p-2 px-6 text-gray-100 bg-red-500 hover:bg-red-300 rounded-full baseline"
+              className="p-2 px-6 text-gray-100 bg-orange-500 hover:bg-orange-300 rounded-full baseline"
             >
               Get Started
             </a>

@@ -5,13 +5,12 @@ function Footer() {
         <div className="flex flex-col-reverse items-center justify-between gap-12 md:flex-col md:items-start">
           <div>
             <a href="#logo">
-              <svg
-                className="h-8 fill-cyan-200"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 512"
-              >
-                <path d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z" />
-              </svg>
+              <img
+                src={`${process.env.PUBLIC_URL}/images/wi-fi-cafe-logo.png`}
+                alt="logo"
+                width="128"
+                height="128"
+              />
             </a>
           </div>
           <div className="flex justify-center gap-4">
@@ -44,20 +43,50 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="flex justify-around gap-32">
-          <div className="flex flex-col gap-3 text-cyan-50">
-            <a href="#Home" className="hover:text-red-100">
-              Home
-            </a>
-            <a href="#Pricing" className="hover:text-red-100">
-              Pricing
-            </a>
-            <a href="#Product" className="hover:text-red-100">
-              Product
-            </a>
-            <a href="#About" className="hover:text-red-100">
-              About
-            </a>
+        <div className="flex flex-col-reverse justify-around gap-16 md:flex-col">
+          <div className="flex justify-around gap-16">
+            <div className="flex flex-col gap-3 text-cyan-50">
+              <a href="#Home" className="hover:text-orange-100">
+                Home
+              </a>
+              <a href="#Pricing" className="hover:text-orange-100">
+                Pricing
+              </a>
+              <a href="#Product" className="hover:text-orange-100">
+                Product
+              </a>
+              <a href="#About" className="hover:text-orange-100">
+                About
+              </a>
+            </div>
+            <div className="flex flex-col gap-3 text-cyan-50">
+              <a href="#Careers" className="hover:text-orange-100">
+                Careers
+              </a>
+              <a href="#Community" className="hover:text-orange-100">
+                Community
+              </a>
+              <a href="#Privacy Policy" className="hover:text-orange-100">
+                Privacy Policy
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col justify-between items-center gap-8">
+            <form>
+              <div className="flex gap-3">
+                <input
+                  type="text"
+                  className="flex-1 px-4 rounded-full focus:outline-none"
+                  placeholder="Updated in your inbox"
+                />
+                <button className="px-6 py-2 text-white rounded-full bg-orange-500 hover:bg-orange-300 focus:outline-none">
+                  Go
+                </button>
+              </div>
+            </form>
+            <div className="text-white">
+              Copyright &copy; 2022, All Rights Reserved
+            </div>
           </div>
         </div>
       </div>

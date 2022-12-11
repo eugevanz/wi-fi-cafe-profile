@@ -49,7 +49,7 @@ function Testimonials() {
         <div className="mt-2 mb-16">
           <a
             href="#toggle"
-            className="p-2 px-6 text-gray-100 bg-red-500 hover:bg-red-300 rounded-full baseline"
+            className="p-2 px-6 text-gray-100 bg-orange-500 hover:bg-orange-300 rounded-full baseline"
           >
             Get Started
           </a>
