@@ -1,10 +1,25 @@
+import { useRef, useState } from "react";
 import CallToAction from "./components/CallToAction";
 import Header from "./components/Header";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
+import GetStarted from "./components/GetStarted";
+import UnderScreenTabBar from "./components/UnderScreenTabBar";
 
 function App() {
+  const getStarted = useRef(null);
+  const product = useRef(null);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  function scrollToServices() {
+    product.current.scrollIntoView({ behavior: "smooth" });
+  }
+  function scrollToEmail() {
+    getStarted.current.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <div>
       <nav className="relative container mx-auto p-6">
@@ -17,49 +32,56 @@ function App() {
             />
             <div className="text-2xl font-bold text-orange-500">Wi-Fi Cafe</div>
           </div>
-          <div className="md:flex hidden gap-6">
-            <a
-              href="#Pricing"
-              alt="menu-item"
-              className="hover:text-cyan-600 font-medium "
-            >
-              Pricing
-            </a>
-            <a
-              href="#Product"
-              alt="menu-item"
-              className="hover:text-cyan-600 font-medium "
-            >
-              Product
-            </a>
-            <a
-              href="#AboutUs"
-              alt="menu-item"
-              className="hover:text-cyan-600 font-medium "
-            >
-              About
-            </a>
-            <a
-              href="#Careers"
-              alt="menu-item"
-              className="hover:text-cyan-600 font-medium "
-            >
-              Careers
-            </a>
-            <a
-              href="#Community"
-              alt="menu-item"
-              className="hover:text-cyan-600 font-medium "
-            >
-              Community
-            </a>
-          </div>
-          <a
-            href="#toggle"
-            className="hidden md:block p-2 px-6 text-cyan-100 bg-orange-500 hover:bg-orange-300 rounded-full baseline"
-          >
-            Get Started
-          </a>
+          <ul className="md:flex hidden gap-6">
+            <li>
+              <a
+                href="#Pricing"
+                alt="menu-item"
+                className="hover:text-cyan-600 font-medium focus:outline-none"
+                onClick={() => setIsOpen((prevState) => !prevState)}
+              >
+                Pricing
+              </a>
+            </li>
+            <li>
+              <a
+                href="#Product"
+                alt="menu-item"
+                className="hover:text-cyan-600 font-medium focus:outline-none"
+                onClick={scrollToServices}
+              >
+                Product
+              </a>
+            </li>
+            <li>
+              <a
+                href="#About"
+                alt="menu-item"
+                className="hover:text-cyan-600 font-medium focus:outline-none"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#Careers"
+                alt="menu-item"
+                className="hover:text-cyan-600 font-medium focus:outline-none"
+              >
+                Careers
+              </a>
+            </li>
+            <li>
+              <a
+                href="#Community"
+                alt="menu-item"
+                className="hover:text-cyan-600 font-medium focus:outline-none"
+              >
+                Community
+              </a>
+            </li>
+          </ul>
+          <GetStarted scrollToEmail={scrollToEmail} />
           <button
             id="menu-btn"
             className="block hamburger md:hidden focus:outline-none"
@@ -78,50 +100,19 @@ function App() {
             id="menu"
             className="absolute flex-col items-center self-end hidden py-8 mt-10 gap-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
           >
-            <a
-              href="#Pricing"
-              alt="menu-item"
-              className="hover:text-cyan-600 font-medium "
-            >
-              Pricing
-            </a>
-            <a
-              href="#Product"
-              alt="menu-item"
-              className="hover:text-cyan-600 font-medium "
-            >
-              Product
-            </a>
-            <a
-              href="#AboutUs"
-              alt="menu-item"
-              className="hover:text-cyan-600 font-medium "
-            >
-              About
-            </a>
-            <a
-              href="#Careers"
-              alt="menu-item"
-              className="hover:text-cyan-600 font-medium "
-            >
-              Careers
-            </a>
-            <a
-              href="#Community"
-              alt="menu-item"
-              className="hover:text-cyan-600 font-medium "
-            >
-              Community
-            </a>
+            <UnderScreenTabBar isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
         </div>
       </nav>
-
-      <Header></Header>
-      <Services></Services>
-      <Testimonials></Testimonials>
-      <CallToAction></CallToAction>
-      <Footer></Footer>
+      <UnderScreenTabBar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Header scrollToEmail={scrollToEmail} />
+      <Services
+        className="flex flex-col gap-8 md:flex-row container py-24 px-10 mx-auto m-24"
+        ref={product}
+      />
+      <Testimonials scrollToEmail={scrollToEmail} />
+      <CallToAction scrollToEmail={scrollToEmail} />
+      <Footer className="bg-cyan-900" ref={getStarted} />
     </div>
   );
 }

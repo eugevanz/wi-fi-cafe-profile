@@ -1,4 +1,6 @@
-function Header() {
+import GetStarted from "./GetStarted";
+
+function Header({ scrollToEmail }) {
   return (
     <section>
       <div className="flex flex-col-reverse md:flex-row container items-center px-10 mx-auto m-24">
@@ -11,12 +13,7 @@ function Header() {
             seamless, and a reliable wireless experience for venue visitors.
           </p>
           <div className="flex justify-center md:justify-start">
-            <a
-              href="#toggle"
-              className="p-2 px-6 text-gray-100 bg-orange-500 hover:bg-orange-300 rounded-full baseline"
-            >
-              Get Started
-            </a>
+            <GetStarted scrollToEmail={scrollToEmail} />
           </div>
         </div>
         <div className="md:w-1/2 lg:w-2/3">

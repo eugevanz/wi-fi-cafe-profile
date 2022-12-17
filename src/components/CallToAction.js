@@ -1,4 +1,6 @@
-function CallToAction() {
+import GetStarted from "./GetStarted";
+
+function CallToAction({ scrollToEmail }) {
   return (
     <section className="bg-orange-700">
       <div className="flex flex-col container px-10 py-32 mx-auto gap-12">
@@ -6,12 +8,7 @@ function CallToAction() {
           <p className="text-5xl font-bold leading-tight text-center text-cyan-50 md:text-4xl md:max-w-xl md:text-left">
             Simplify how your team works, today!
           </p>
-          <a
-            href="#toggle"
-            className="p-2 px-6 text-orange-700 bg-cyan-50 shadow-2xl w-1/3 text-center hover:bg-orange-300 rounded-full baseline md:w-1/4"
-          >
-            Get Started
-          </a>
+          <GetStarted scrollToEmail={scrollToEmail} />
         </div>
         <p className="text-cyan-50 md:w-2/3">
           Our vision is to focus on providing personalized and tailored services
