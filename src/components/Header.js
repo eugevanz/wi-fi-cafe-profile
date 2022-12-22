@@ -1,9 +1,12 @@
-import { motion } from "framer-motion";
 import GetStarted from "./GetStarted";
 
-function Header({ scrollToEmail }) {
+function Header({ scrollToEmail, isOpen }) {
   return (
-    <motion.section layout="position">
+    <section
+      className={`${
+        isOpen && "blur-2xl"
+      } transition-all duration-300 ease-in-out`}
+    >
       <div className="flex flex-col-reverse md:flex-row container items-center px-10 mx-auto m-24">
         <div className="flex flex-col gap-8 md:w-1/2 lg:w-1/3">
           <p className="max-w-sm text-4xl font-bold text-center md:text-5xl md:text-left">
@@ -24,7 +27,7 @@ function Header({ scrollToEmail }) {
           />
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 export default Header;

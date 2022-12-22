@@ -1,54 +1,41 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
 import Pricing from "./Pricing";
 
-function Navigation({ scrollToServices }) {
-  const [isOpen, setIsOpen] = useState(false);
-
+function Navigation({ scrollToServices, isOpen, setIsOpen }) {
   return (
-    <div className="md:flex flex-wrap hidden gap-6 container mx-32">
-      <motion.div layout onClick={() => setIsOpen((prevState) => !prevState)}>
-        <motion.h4
-          layout="position"
-          className="hover:text-cyan-600 font-medium focus:outline-none"
+    <div className="md:flex justify-center items-center hidden gap-6 container mx-40">
+      <div onClick={() => setIsOpen((prevState) => !prevState)}>
+        <h4
+          className={`hover:text-cyan-600 font-medium focus:outline-none ${
+            isOpen && "text-3xl text-cyan-600"
+          }`}
         >
           Pricing
-        </motion.h4>
-        {isOpen && <Pricing />}
-      </motion.div>
-      <motion.div>
-        <motion.h4
-          layout="position"
+        </h4>
+        <Pricing isOpen={isOpen} setIsOpen={setIsOpen} />
+      </div>
+      <div>
+        <h4
           className="hover:text-cyan-600 font-medium focus:outline-none"
           onClick={scrollToServices}
         >
           Product
-        </motion.h4>
-      </motion.div>
-      <motion.div>
-        <motion.h4
-          layout="position"
-          className="hover:text-cyan-600 font-medium focus:outline-none"
-        >
+        </h4>
+      </div>
+      <div>
+        <h4 className="hover:text-cyan-600 font-medium focus:outline-none">
           About
-        </motion.h4>
-      </motion.div>
-      <motion.div>
-        <motion.h4
-          layout="position"
-          className="hover:text-cyan-600 font-medium focus:outline-none"
-        >
+        </h4>
+      </div>
+      <div>
+        <h4 className="hover:text-cyan-600 font-medium focus:outline-none">
           Careers
-        </motion.h4>
-      </motion.div>
-      <motion.div>
-        <motion.h4
-          layout="position"
-          className="hover:text-cyan-600 font-medium focus:outline-none"
-        >
+        </h4>
+      </div>
+      <div>
+        <h4 className="hover:text-cyan-600 font-medium focus:outline-none">
           Community
-        </motion.h4>
-      </motion.div>
+        </h4>
+      </div>
     </div>
   );
 }

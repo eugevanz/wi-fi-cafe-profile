@@ -15,7 +15,7 @@ const Footer = forwardRef((props, ref) => (
             />
           </a>
         </div>
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center items-center gap-4">
           <a href="#twitter">
             <svg
               className="h-8 fill-cyan-200"
@@ -43,54 +43,71 @@ const Footer = forwardRef((props, ref) => (
               <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
             </svg>
           </a>
-        </div>
-      </div>
-      <div className="flex flex-col-reverse justify-around gap-16 md:flex-col">
-        <div className="flex justify-around gap-16">
-          <div className="flex flex-col gap-3 text-cyan-50">
-            <a href="#Home" className="hover:text-orange-100">
-              Home
-            </a>
-            <a href="#Pricing" className="hover:text-orange-100">
-              Pricing
-            </a>
-            <a href="#Product" className="hover:text-orange-100">
-              Product
-            </a>
-            <a href="#About" className="hover:text-orange-100">
-              About
-            </a>
-          </div>
-          <div className="flex flex-col gap-3 text-cyan-50">
-            <a href="#Careers" className="hover:text-orange-100">
-              Careers
-            </a>
-            <a href="#Community" className="hover:text-orange-100">
-              Community
-            </a>
-            <a href="#Privacy Policy" className="hover:text-orange-100">
-              Privacy Policy
-            </a>
-          </div>
-        </div>
-        <div className="flex flex-col justify-between items-center gap-8">
-          <form>
-            <div className="flex gap-3">
-              <input
-                type="text"
-                className="flex-1 px-4 rounded-full focus:outline-none"
-                placeholder="Updated in your inbox"
-              />
-              <button className="px-6 py-2 text-white rounded-full bg-orange-500 hover:bg-orange-300 focus:outline-none">
-                Go
-              </button>
-            </div>
-          </form>
           <div className="text-white">
             Copyright &copy; 2022, All Rights Reserved
           </div>
         </div>
       </div>
+      <div className="flex justify-around gap-16">
+        <div className="flex flex-col gap-3 text-cyan-50">
+          <a href="#Home" className="hover:text-orange-100">
+            Home
+          </a>
+          <a href="#Pricing" className="hover:text-orange-100">
+            Pricing
+          </a>
+          <a href="#Product" className="hover:text-orange-100">
+            Product
+          </a>
+          <a href="#About" className="hover:text-orange-100">
+            About
+          </a>
+        </div>
+        <div className="flex flex-col gap-3 text-cyan-50">
+          <a href="#Careers" className="hover:text-orange-100">
+            Careers
+          </a>
+          <a href="#Community" className="hover:text-orange-100">
+            Community
+          </a>
+          <a href="#Privacy Policy" className="hover:text-orange-100">
+            Privacy Policy
+          </a>
+        </div>
+      </div>
+      <form className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
+          <div
+            htmlFor="How do we get a hold of you"
+            className="text-sm text-slate-50 font-bold px-4 -mb-2"
+          >
+            Email
+          </div>
+          <input
+            type="text"
+            className="flex-1 px-4 py-2 text-sm text-slate-500 rounded-full focus:outline-none"
+            value="Who we contact"
+            readOnly
+          />
+        </div>
+        <div className="flex flex-col gap-3">
+          <label
+            htmlFor="Message to the company"
+            className="text-sm text-slate-50 font-bold px-4 -mb-2"
+          >
+            Subject
+          </label>
+          <input
+            type="text"
+            className="flex-1 px-4 py-2 text-sm text-slate-500 rounded-full focus:outline-none"
+            value="Message to the company"
+            readOnly
+          />
+        </div>
+        <button className="px-6 py-2 text-white font-bold rounded-full bg-orange-500 hover:bg-orange-300 focus:outline-none">
+          Go
+        </button>
+      </form>
     </div>
   </motion.footer>
 ));

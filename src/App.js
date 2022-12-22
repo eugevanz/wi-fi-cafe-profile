@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import CallToAction from "./components/CallToAction";
 import Header from "./components/Header";
 import Services from "./components/Services";
@@ -10,6 +10,7 @@ import Navigation from "./components/Navigation";
 function App() {
   const getStarted = useRef(null);
   const product = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   function scrollToServices() {
     product.current.scrollIntoView({ behavior: "smooth" });
@@ -22,7 +23,7 @@ function App() {
     <div>
       <nav className="relative container mx-auto p-6">
         <div className="flex justify-between items-center">
-          <div className="p-2 flex items-center gap-1">
+          <div className="p-2 flex-nowrap flex items-center gap-2 w-full">
             <img
               src={`${process.env.PUBLIC_URL}/images/wi-fi-cafe-logo.png`}
               alt="logo"
@@ -30,6 +31,11 @@ function App() {
             />
             <div className="text-2xl font-bold text-orange-500">Wi-Fi Cafe</div>
           </div>
+          <Navigation
+            scrollToServices={scrollToServices}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+          />
           <GetStarted scrollToEmail={scrollToEmail} />
           <button
             id="menu-btn"
@@ -45,8 +51,7 @@ function App() {
           </button>
         </div>
       </nav>
-      <Navigation scrollToServices={scrollToServices} />
-      <Header scrollToEmail={scrollToEmail} />
+      <Header scrollToEmail={scrollToEmail} isOpen={isOpen} />
       <Services
         className="flex flex-col gap-8 md:flex-row container py-24 px-10 mx-auto m-24"
         ref={product}
