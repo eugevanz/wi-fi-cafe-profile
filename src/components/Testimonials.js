@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import GetStarted from "./GetStarted";
 
 function Testimonials({ scrollToEmail }) {
   return (
-    <section>
+    <motion.section layout="position">
       <div className="max-w-6xl px-5 mx-auto text-center">
         <p className="text-2xl font-bold text-center">
           What are they saying about us?
@@ -54,7 +55,7 @@ function Testimonials({ scrollToEmail }) {
           <GetStarted scrollToEmail={scrollToEmail} />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 export default Testimonials;

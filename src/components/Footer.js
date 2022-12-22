@@ -1,7 +1,8 @@
 import { forwardRef } from "react";
+import { motion } from "framer-motion";
 
 const Footer = forwardRef((props, ref) => (
-  <footer {...props} ref={ref}>
+  <motion.footer layout="position" {...props} ref={ref}>
     <div className="container flex flex-col-reverse justify-between px-6 py-10 mx-auto gap-8 md:flex-row">
       <div className="flex flex-col-reverse items-center justify-between gap-12 md:flex-col md:items-start">
         <div>
@@ -91,6 +92,6 @@ const Footer = forwardRef((props, ref) => (
         </div>
       </div>
     </div>
-  </footer>
+  </motion.footer>
 ));
 export default Footer;

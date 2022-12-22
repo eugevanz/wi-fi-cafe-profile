@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import GetStarted from "./GetStarted";
 
 function CallToAction({ scrollToEmail }) {
   return (
-    <section className="bg-orange-700">
+    <motion.section layout="position" className="bg-orange-700">
       <div className="flex flex-col container px-10 py-32 mx-auto gap-12">
         <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
           <p className="text-5xl font-bold leading-tight text-center text-cyan-50 md:text-4xl md:max-w-xl md:text-left">
@@ -22,7 +23,7 @@ function CallToAction({ scrollToEmail }) {
           meet the needs of our clients and help them to achieve their goals.
         </p>
       </div>
-    </section>
+    </motion.section>
   );
 }
 export default CallToAction;

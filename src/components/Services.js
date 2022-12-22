@@ -1,7 +1,8 @@
 import { forwardRef } from "react";
+import { motion } from "framer-motion";
 
 const Services = forwardRef((props, ref) => (
-  <section>
+  <motion.section layout="position">
     <div {...props} ref={ref}>
       <div className="flex flex-col gap-8 md:w-1/2">
         <p className="max-w-md text-2xl font-bold text-center md:text-3xl md:text-left">
@@ -92,6 +93,6 @@ const Services = forwardRef((props, ref) => (
         </div>
       </div>
     </div>
-  </section>
+  </motion.section>
 ));
 export default Services;
